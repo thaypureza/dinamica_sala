@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pratica_chefs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="cabecalho">
+        <div class="secao_usuario">
+            <img id="foto_usuario" src="anexos_prova/imagens_usuarios/usuario1.jpg" alt="usuario1">
+            <div class="perfil">
+                <p id="nome_usuario"> SAEPChef</p>
+                <button disabled class="btn-perfil">Ver Perfil</button>
+            </div>
+        </div>
+        <div class="secao_empresa">
+            SAEPChef
+        </div>
+        <div class="modal">
+            <button id="btn-login">Login</button>
+            <div id="modal-container" class="modal-container">
+                <div class="modal-conteudo">
+                    <h2>Login</h2>
+                    <form id="form-login">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha" required>
+                        <button type="submit">Entrar</button>
+                        <span id="btn-fechar" class="btn-fechar">&times;</span>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="campo-busca">
+        <input id="barra-pesquisa" type="text" placeholder="Digite o nome do chef... ex: @chef1">
+        <img src="anexos_prova/icones/lupa.svg" alt="Icone lupa" id="icone-lupa">
+    </div>
+    <div class="mural-receitas">
+        <div class="receita">
+            <img class="img-receita" src="anexos_prova/receitas/receita1.jpg" alt="receita1">
+            <p>Receita 1</p>
+            <div id="avaliacao-receita">
+                <img class="img-icone" src="anexos_prova/icones/estrela.svg" alt="icone-avaliacao">
+                <p>10</p>
+            </div>
+        </div>
+        <div class="receita">
+            <img class="img-receita" src="anexos_prova/receitas/receita2.jpg" alt="receita2">
+            <p>Receita 2</p>
+            <div id="avaliacao-receita">
+                <img class="img-icone" src="anexos_prova/icones/estrela.svg" alt="icone-avaliacao">
+                <p>5</p>
+            </div>
+        </div>
+        <div class="receita">
+            <img class="img-receita" src="anexos_prova/receitas/receita3.jpg" alt="receita3">
+            <p>Receita 3</p>
+            <div id="avaliacao-receita">
+                <img class="img-icone" src="anexos_prova/icones/estrela.svg" alt="icone-avaliacao">
+                <p>12</p>
+            </div>
+        </div>
+        <div class="receita">
+            <img class="img-receita" src="anexos_prova/receitas/receita4.jpg" alt="receita4">
+            <p>Receita 4</p>
+            <div id="avaliacao-receita">
+                <img class="img-icone" src="anexos_prova/icones/estrela.svg" alt="icone-avaliacao">
+                <p>8</p>
+            </div>
+        </div>
+        <div class="receita">
+            <img class="img-receita" src="anexos_prova/receitas/receita5.jpg" alt="receita5">
+            <p>Receita 5</p>
+            <div id="avaliacao-receita">
+                <img class="img-icone" src="anexos_prova/icones/estrela.svg" alt="icone-avaliacao">
+                <p>15</p>
+            </div>
+        </div>
+        <div class="receita">
+            <img class="img-receita" src="anexos_prova/receitas/receita6.jpg" alt="receita6">
+            <p>Receita 6</p>
+            <div id="avaliacao-receita">
+                <img class="img-icone" src="anexos_prova/icones/estrela.svg" alt="icone-avaliacao">
+                <p>23</p>
+            </div>
+        </div>
+        <div class="receita">
+            <img class="img-receita" src="anexos_prova/receitas/receita7.jpg" alt="receita7">
+            <p>Receita 7</p>
+            <div id="avaliacao-receita">
+                <img class="img-icone" src="anexos_prova/icones/estrela.svg" alt="icone-avaliacao">
+                <p>6</p>
+            </div>
+        </div>
+        <div class="receita">
+            <img class="img-receita" src="anexos_prova/receitas/receita8.jpg" alt="receita8">
+            <p>Receita 8</p>
+            <div id="avaliacao-receita">
+                <img class="img-icone" src="anexos_prova/icones/estrela.svg" alt="icone-avaliacao">
+                <p>11</p>
+            </div>
+        </div>
+        <div class="receita">
+            <img class="img-receita" src="anexos_prova/receitas/receita9.jpg" alt="receita9">
+            <p>Receita 9</p>
+            <div id="avaliacao-receita">
+                <img class="img-icone" src="anexos_prova/icones/estrela.svg" alt="icone-avaliacao">
+                <p>1</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
