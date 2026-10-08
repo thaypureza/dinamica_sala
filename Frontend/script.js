@@ -1,6 +1,8 @@
 const modal = document.getElementById('modal-container');
 const btnAbrir = document.getElementById('btn-login');
 const btnFechar = document.getElementById('btn-fechar');
+const btnPerfil = document.querySelector('.btn-perfil');
+
 
 
 btnAbrir.addEventListener('click', () => {
@@ -17,3 +19,4 @@ window.addEventListener('click', (event) => {
         modal.classList.remove('ativo');
     }
 });
+
