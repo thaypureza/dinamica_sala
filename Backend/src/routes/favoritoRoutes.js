@@ -3,7 +3,7 @@ import { favoritoController } from "../controller/favoritoController.js";
 
 const router = Router();
 
-router.post('/favoritos', favoritoController.toggleFavorito);
-router.get('/favoritos/usuario/:id_usuario', favoritoController.listarFavoritoUsuario);
-
+router.post('/favorito', favoritoController.toggleFavorito);
+router.get('/favorito/usuario/:id_usuario', favoritoController.getByUser);
+router.delete('/favorito/:id_favorito', favoritoController.removerFavorito);
 export default router;

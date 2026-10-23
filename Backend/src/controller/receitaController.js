@@ -71,7 +71,7 @@ export const receitaController = {
 
       const result = await db.query(
         `UPDATE public.receita 
-         SET titulo_receita = $1, origem_receita = $2, url_imagem = $3, updater_at = $4 
+         SET titulo_receita = $1, origem_receita = $2, url_imagem = $3, updated_at = $4 
          WHERE id_receita = $5 
          RETURNING id_receita, titulo_receita, origem_receita, url_imagem, id_usuario`,
         [titulo_receita, origem_receita, url_imagem, now, id]

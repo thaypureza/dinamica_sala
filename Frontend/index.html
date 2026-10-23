@@ -1,245 +1,304 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAEPChef | Receitas que conectam pessoas</title>
     <link rel="stylesheet" href="style.css">
-    <title>Pratica_chefs</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <div class="cabecalho">
-
-        <div class="secao_usuario">
-            <img id="foto_usuario" src="../anexos_prova/imagens_usuarios/usuario1.jpg" alt="Foto do usuário">
+    <header class="cabecalho">
+        <div class="secao-usuario">
+            <button class="foto-botao" id="abrir-perfil" aria-label="Abrir perfil">
+                <img id="foto_usuario" src="../anexos_prova/imagens_usuarios/usuario1.jpg" alt="Foto do usuário">
+            </button>
 
             <div class="perfil">
-                <p id="nome_usuario">SAEPChef</p>
-                <button class="btn-perfil" type="button">Ver Perfil</button>
-            </div>
-        </div>
-        <div class="secao_empresa">
-            SAEPChef
-        </div>
-
-        <div class="modal">
-            <button id="btn-login" type="button">Login</button>
-
-            <div id="modal-container" class="modal-container">
-                <div class="modal-conteudo">
-                    <h2>Login</h2>
-
-                    <form id="form-login">
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email" name="email" required>
-
-                        <label for="senha">Senha:</label>
-                        <input type="password" id="senha" name="senha" required>
-
-                        <button type="submit">Entrar</button>
-                        <span id="btn-fechar" class="btn-fechar">&times;</span>
-                    </form>
+                <div class="nome-marca">
+                    <span class="icone-chef"></span>
+                    <p id="nome_usuario">SAEPChef</p>
                 </div>
+                <button class="btn-perfil" id="btn-perfil" type="button" hidden>Ver Perfil</button>
             </div>
         </div>
 
+        <div class="secao-empresa">
+            <div class="marca-central">
+                <span>❧</span>
+                <h1>SAEPChef</h1>
+                <span>❧</span>
+            </div>
+            <p>Receitas que conectam pessoas</p>
+        </div>
+
+        <div class="acoes-cabecalho">
+            <button class="btn-notificacao" id="btn-notificacao" aria-label="Notificações">🔔</button>
+            <button id="btn-login" class="btn-login" type="button">Login</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="campo-busca">
+            <span class="lupa">⌕</span>
+            <input id="barra-pesquisa" type="search" placeholder="Digite o nome da receita...">
+            <button id="btn-pesquisar" aria-label="Pesquisar">⌕</button>
+        </section>
+
+        <section class="mural-receitas" id="mural-receitas">
+            <article class="receita" data-id="1" data-nome="Sopa cremosa de cogumelos" data-tempo="25 min" data-descricao="Sopa cremosa de cogumelos com ervas frescas e temperos.">
+                <div class="imagem-container">
+                    <img class="img-receita" src="../anexos_prova/receitas/receita1.jpg" alt="Sopa cremosa de cogumelos">
+                    <button class="btn-favorito" aria-label="Adicionar aos favoritos" aria-pressed="false">♡</button>
+                </div>
+                <div class="info-receita">
+                    <h2>Sopa cremosa de cogumelos</h2>
+                    <div class="detalhes-receita">
+                        <span class="avaliacao-receita"><img src="../anexos_prova/icones/estrela.svg" alt="">10</span>
+                        <span class="tempo-receita"><span class="relogio">◷</span>25 min</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="receita" data-id="2" data-nome="Sushi de legumes" data-tempo="20 min" data-descricao="Rolinhos de sushi recheados com vegetais frescos.">
+                <div class="imagem-container">
+                    <img class="img-receita" src="../anexos_prova/receitas/receita2.jpg" alt="Sushi de legumes">
+                    <button class="btn-favorito" aria-label="Adicionar aos favoritos" aria-pressed="false">♡</button>
+                </div>
+                <div class="info-receita">
+                    <h2>Sushi de legumes</h2>
+                    <div class="detalhes-receita">
+                        <span class="avaliacao-receita"><img src="../anexos_prova/icones/estrela.svg" alt="">5</span>
+                        <span class="tempo-receita"><span class="relogio">◷</span>20 min</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="receita" data-id="3" data-nome="Arroz, feijão e legumes" data-tempo="35 min" data-descricao="Prato com arroz branco, feijão-preto e legumes frescos.">
+                <div class="imagem-container">
+                    <img class="img-receita" src="../anexos_prova/receitas/receita3.jpg" alt="Arroz, feijão e legumes">
+                    <button class="btn-favorito" aria-label="Adicionar aos favoritos" aria-pressed="false">♡</button>
+                </div>
+                <div class="info-receita">
+                    <h2>Arroz, feijão e legumes</h2>
+                    <div class="detalhes-receita">
+                        <span class="avaliacao-receita"><img src="../anexos_prova/icones/estrela.svg" alt="">12</span>
+                        <span class="tempo-receita"><span class="relogio">◷</span>35 min</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="receita" data-id="4" data-nome="Sopa cremosa de camarão" data-tempo="30 min" data-descricao="Camarões em um caldo cremoso com temperos e ervas.">
+                <div class="imagem-container">
+                    <img class="img-receita" src="../anexos_prova/receitas/receita4.jpg" alt="Sopa cremosa de camarão">
+                    <button class="btn-favorito" aria-label="Adicionar aos favoritos" aria-pressed="false">♡</button>
+                </div>
+                <div class="info-receita">
+                    <h2>Sopa cremosa de camarão</h2>
+                    <div class="detalhes-receita">
+                        <span class="avaliacao-receita"><img src="../anexos_prova/icones/estrela.svg" alt="">8</span>
+                        <span class="tempo-receita"><span class="relogio">◷</span>30 min</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="receita" data-id="5" data-nome="Tortinhas de tomate e queijo" data-tempo="40 min" data-descricao="Tortinhas salgadas com tomates, queijo e ervas frescas.">
+                <div class="imagem-container">
+                    <img class="img-receita" src="../anexos_prova/receitas/receita5.jpg" alt="Tortinhas de tomate e queijo">
+                    <button class="btn-favorito" aria-label="Adicionar aos favoritos" aria-pressed="false">♡</button>
+                </div>
+                <div class="info-receita">
+                    <h2>Tortinhas de tomate e queijo</h2>
+                    <div class="detalhes-receita">
+                        <span class="avaliacao-receita"><img src="../anexos_prova/icones/estrela.svg" alt="">15</span>
+                        <span class="tempo-receita"><span class="relogio">◷</span>40 min</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="receita" data-id="6" data-nome="Salada mediterrânea" data-tempo="15 min" data-descricao="Salada com tomates, pepino, azeitonas, queijo e folhas verdes.">
+                <div class="imagem-container">
+                    <img class="img-receita" src="../anexos_prova/receitas/receita6.jpg" alt="Salada mediterrânea">
+                    <button class="btn-favorito" aria-label="Adicionar aos favoritos" aria-pressed="false">♡</button>
+                </div>
+                <div class="info-receita">
+                    <h2>Salada mediterrânea</h2>
+                    <div class="detalhes-receita">
+                        <span class="avaliacao-receita"><img src="../anexos_prova/icones/estrela.svg" alt="">23</span>
+                        <span class="tempo-receita"><span class="relogio">◷</span>15 min</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="receita" data-id="7" data-nome="Ensopado de grão-de-bico" data-tempo="50 min" data-descricao="Grão-de-bico cozido em molho temperado com ervas frescas.">
+                <div class="imagem-container">
+                    <img class="img-receita" src="../anexos_prova/receitas/receita7.jpg" alt="Ensopado de grão-de-bico">
+                    <button class="btn-favorito" aria-label="Adicionar aos favoritos" aria-pressed="false">♡</button>
+                </div>
+                <div class="info-receita">
+                    <h2>Ensopado de grão-de-bico</h2>
+                    <div class="detalhes-receita">
+                        <span class="avaliacao-receita"><img src="../anexos_prova/icones/estrela.svg" alt="">11</span>
+                        <span class="tempo-receita"><span class="relogio">◷</span>50 min</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="receita" data-id="8" data-nome="Sopa de tomate com mussarela e manjericão" data-tempo="35 min" data-descricao="Sopa de tomate com mussarela fresca e manjericão.">
+                <div class="imagem-container">
+                    <img class="img-receita" src="../anexos_prova/receitas/receita8.jpg" alt="Sopa de tomate com mussarela e manjericão">
+                    <button class="btn-favorito" aria-label="Adicionar aos favoritos" aria-pressed="false">♡</button>
+                </div>
+                <div class="info-receita">
+                    <h2>Sopa de tomate com mussarela e manjericão</h2>
+                    <div class="detalhes-receita">
+                        <span class="avaliacao-receita"><img src="../anexos_prova/icones/estrela.svg" alt="">18</span>
+                        <span class="tempo-receita"><span class="relogio">◷</span>35 min</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="receita" data-id="9" data-nome="Espaguete ao molho de tomate e manjericão" data-tempo="45 min" data-descricao="Espaguete com molho de tomate, tomates frescos e manjericão.">
+                <div class="imagem-container">
+                    <img class="img-receita" src="../anexos_prova/receitas/receita9.jpg" alt="Espaguete ao molho de tomate e manjericão">
+                    <button class="btn-favorito" aria-label="Adicionar aos favoritos" aria-pressed="false">♡</button>
+                </div>
+                <div class="info-receita">
+                    <h2>Espaguete ao molho de tomate e manjericão</h2>
+                    <div class="detalhes-receita">
+                        <span class="avaliacao-receita"><img src="../anexos_prova/icones/estrela.svg" alt="">27</span>
+                        <span class="tempo-receita"><span class="relogio">◷</span>45 min</span>
+                    </div>
+                </div>
+            </article>
+
+            <p class="sem-resultados" id="sem-resultados" hidden>Nenhuma receita encontrada.</p>
+        </section>
+    </main>
+    
+<footer class="footer">
+    <div class="footer-conteudo">
+        <div class="footer-marca">
+            <h2>♧ SAEPChef</h2>
+            <p>Receitas que conectam pessoas.</p>
+            <p>Compartilhe sabores, descubra receitas e cozinhe com amor!</p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Navegação</h3>
+            <a href="#" id="footer-inicio">Início</a>
+            <a href="#" id="footer-receitas">Receitas</a>
+            <a href="#" id="footer-favoritas">Minhas favoritas</a>
+        </div>
+
+        <div class="footer-contato">
+            <h3>Sobre o projeto</h3>
+            <p>Um espaço para encontrar, compartilhar e experimentar novas receitas.</p>
+            <p class="footer-frase">Feito com ♡ para quem ama cozinhar.</p>
+        </div>
     </div>
 
+    <div class="footer-final">
+        <p>© 2026 SAEPChef. Todos os direitos reservados.</p>
+        <p>Feito com carinho e bons ingredientes.</p>
+    </div>
+</footer>
 
-    <div id="fundo-perfil" class="fundo-perfil"></div>
 
+    <div class="fundo-modal" id="fundo-login">
+        <section class="modal-conteudo" role="dialog" aria-modal="true" aria-labelledby="titulo-login">
+            <button class="fechar-modal" id="fechar-login" aria-label="Fechar">×</button>
+            <div class="modal-logo">♧</div>
+            <h2 id="titulo-login">Bem-vindo ao SAEPChef!</h2>
+            <p class="texto-modal">Entre para compartilhar suas receitas favoritas.</p>
 
-    <div id="menu-perfil" class="menu-perfil">
+            <form id="form-login">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
 
-        <button id="fechar-perfil" class="fechar-perfil" type="button" aria-label="Fechar menu">
-            &times;
-        </button>
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="Digite sua senha" required minlength="4">
 
+                <button class="btn-entrar" type="submit">Entrar</button>
+                <p id="mensagem-login" class="mensagem-login" role="status"></p>
+            </form>
+        </section>
+    </div>
+
+    <div class="fundo-perfil" id="fundo-perfil"></div>
+
+    <aside class="menu-perfil" id="menu-perfil" aria-label="Menu do perfil" aria-hidden="true">
+        <button class="fechar-perfil" id="fechar-perfil" aria-label="Fechar menu">×</button>
 
         <div class="perfil-menu">
-
             <img id="foto-menu-perfil" src="../anexos_prova/imagens_usuarios/usuario1.jpg" alt="Foto do chef">
-
-            <h3 id="nome-menu-perfil">SAEPChef</h3>
+            <h2 id="nome-menu-perfil">SAEPChef</h2>
             <p class="usuario-tag">@chef1</p>
-
             <span class="etiqueta-chef">Chef da comunidade</span>
-
         </div>
-
 
         <div class="estatisticas-perfil">
-
             <div class="estatistica">
-                <span id="quantidade-favoritas">0</span>
-                <p>Receitas favoritas</p>
+                <strong id="quantidade-favoritas">0</strong>
+                <span>Receitas favoritas</span>
             </div>
-
             <div class="estatistica">
-                <span id="quantidade-receitas">0</span>
-                <p>Receitas criadas</p>
+                <strong id="quantidade-receitas">9</strong>
+                <span>Receitas disponíveis</span>
             </div>
-
         </div>
 
-
-        <button id="btn-criar-receita" class="btn-criar-receita" type="button">
-            + Criar receita
-        </button>
-
+        <button class="btn-criar-receita" id="btn-criar-receita" type="button">+ Criar receita</button>
         <hr>
 
-
         <nav class="opcoes-menu">
-
-            <a href="index.html" class="opcao-menu">
-                <span>⌂</span> Meu perfil
-            </a>
-
-            <a href="#" class="opcao-menu">
-                <span>♨</span> Minhas receitas
-            </a>
-
-            <a href="#" class="opcao-menu">
-                <span>♡</span> Receitas favoritas
-            </a>
-
-            <a href="#" class="opcao-menu">
-                <span>⚙</span> Configurações
-            </a>
-
+            <button class="opcao-menu" data-acao="perfil"><span>⌂</span> Meu perfil</button>
+            <button class="opcao-menu" data-acao="todas"><span>♨</span> Todas as receitas</button>
+            <button class="opcao-menu" data-acao="favoritas"><span>♡</span> Receitas favoritas</button>
+            <button class="opcao-menu" data-acao="login"><span>⇥</span> Entrar / trocar conta</button>
         </nav>
 
-
         <div class="rodape-menu">
-            <p>SAEPChef</p>
-            <small>Compartilhe o sabor!</small>
+            <strong>SAEPChef</strong>
+            <p>Compartilhe o sabor!</p>
         </div>
+    </aside>
 
-    </div>
-
-
-    <div class="campo-busca">
-        <input id="barra-pesquisa" type="text" placeholder="Digite o nome do chef... ex: @chef1">
-
-        <img src="../anexos_prova/icones/lupa.svg" alt="Ícone de lupa" id="icone-lupa">
-    </div>
-
-    <div class="mural-receitas">
-
-        <div class="receita" data-id="1">
-            <img class="img-receita" src="../anexos_prova/receitas/receita1.jpg" alt="Receita 1">
-            <p>Receita 1</p>
-            <div class="avaliacao-receita">
-                <img class="img-icone" src="../anexos_prova/icones/estrela.svg" alt="Avaliação">
-                <p>10</p>
-            </div>
-        </div>
-
-        <div class="receita" data-id="2">
-            <img class="img-receita" src="../anexos_prova/receitas/receita2.jpg" alt="Receita 2">
-            <p>Receita 2</p>
-            <div class="avaliacao-receita">
-                <img class="img-icone" src="../anexos_prova/icones/estrela.svg" alt="Avaliação">
-                <p>5</p>
-            </div>
-        </div>
-
-        <div class="receita" data-id="3">
-            <img class="img-receita" src="../anexos_prova/receitas/receita3.jpg" alt="Receita 3">
-            <p>Receita 3</p>
-            <div class="avaliacao-receita">
-                <img class="img-icone" src="../anexos_prova/icones/estrela.svg" alt="Avaliação">
-                <p>12</p>
-            </div>
-        </div>
-
-        <div class="receita" data-id="4">
-            <img class="img-receita" src="../anexos_prova/receitas/receita4.jpg" alt="Receita 4">
-            <p>Receita 4</p>
-            <div class="avaliacao-receita">
-                <img class="img-icone" src="../anexos_prova/icones/estrela.svg" alt="Avaliação">
-                <p>8</p>
-            </div>
-        </div>
-
-        <div class="receita" data-id="5">
-            <img class="img-receita" src="../anexos_prova/receitas/receita5.jpg" alt="Receita 5">
-            <p>Receita 5</p>
-            <div class="avaliacao-receita">
-                <img class="img-icone" src="../anexos_prova/icones/estrela.svg" alt="Avaliação">
-                <p>15</p>
-            </div>
-        </div>
-
-        <div class="receita" data-id="6">
-            <img class="img-receita" src="../anexos_prova/receitas/receita6.jpg" alt="Receita 6">
-            <p>Receita 6</p>
-            <div class="avaliacao-receita">
-                <img class="img-icone" src="../anexos_prova/icones/estrela.svg" alt="Avaliação">
-                <p>23</p>
-            </div>
-        </div>
-
-        <div class="receita" data-id="7">
-            <img class="img-receita" src="../anexos_prova/receitas/receita7.jpg" alt="Receita 7">
-            <p>Receita 7</p>
-            <div class="avaliacao-receita">
-                <img class="img-icone" src="../anexos_prova/icones/estrela.svg" alt="Avaliação">
-                <p>6</p>
-            </div>
-        </div>
-
-        <div class="receita" data-id="8">
-            <img class="img-receita" src="../anexos_prova/receitas/receita8.jpg" alt="Receita 8">
-            <p>Receita 8</p>
-            <div class="avaliacao-receita">
-                <img class="img-icone" src="../anexos_prova/icones/estrela.svg" alt="Avaliação">
-                <p>11</p>
-            </div>
-        </div>
-
-        <div class="receita" data-id="9">
-            <img class="img-receita" src="../anexos_prova/receitas/receita9.jpg" alt="Receita 9">
-            <p>Receita 9</p>
-            <div class="avaliacao-receita">
-                <img class="img-icone" src="../anexos_prova/icones/estrela.svg" alt="Avaliação">
-                <p>1</p>
-            </div>
-        </div>
-
-    </div>
-
-
-    <div id="modal-receita-container" class="modal-container">
-
-        <div class="modal-conteudo modal-receita-conteudo">
-
-            <span id="btn-fechar-receita" class="btn-fechar">&times;</span>
-
+    <div class="fundo-modal" id="fundo-receita">
+        <section class="modal-conteudo modal-receita" role="dialog" aria-modal="true" aria-labelledby="titulo-modal-receita">
+            <button class="fechar-modal" id="fechar-receita" aria-label="Fechar">×</button>
             <img id="img-modal-receita" src="" alt="Imagem da receita">
-
             <h2 id="titulo-modal-receita"></h2>
-
-            <div class="avaliacao-modal">
-                <img class="img-icone" src="../anexos_prova/icones/estrela.svg" alt="Avaliação">
-                <span id="avaliacao-modal-receita"></span>
-            </div>
-
-            <h3 class="subtitulo-descricao">Descrição:</h3>
+            <div class="avaliacao-modal"><span>★</span> <span id="avaliacao-modal-receita"></span> avaliações</div>
+            <p class="tempo-modal" id="tempo-modal-receita"></p>
+            <h3>Sobre a receita</h3>
             <p id="descricao-modal-receita"></p>
+        </section>
+    </div>
 
-        </div>
+    <div class="fundo-modal" id="fundo-criar-receita">
+        <section class="modal-conteudo" role="dialog" aria-modal="true" aria-labelledby="titulo-criar-receita">
+            <button class="fechar-modal" id="fechar-criar-receita" aria-label="Fechar">×</button>
+            <h2 id="titulo-criar-receita">Compartilhe uma receita</h2>
+            <p class="texto-modal">Cadastre uma nova receita na página.</p>
+
+            <form id="form-criar-receita">
+                <label for="nova-receita">Nome da receita</label>
+                <input id="nova-receita" required maxlength="70" placeholder="Ex.: Bolo de cenoura">
+
+                <label for="descricao-nova-receita">Descrição</label>
+                <textarea id="descricao-nova-receita" required maxlength="400" placeholder="Conte sobre a receita"></textarea>
+
+                <label for="tempo-nova-receita">Tempo de preparo</label>
+                <input id="tempo-nova-receita" required placeholder="Ex.: 30 min">
+
+                <button class="btn-entrar" type="submit">Adicionar receita</button>
+            </form>
+        </section>
     </div>
 
     <script src="script.js"></script>
-
 </body>
-
 </html>
